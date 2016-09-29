@@ -1,0 +1,7 @@
+.todo-item {
+  background: gray; }
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box; }
