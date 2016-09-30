@@ -1,0 +1,81 @@
+.btn {
+  background: none;
+  outline: none;
+  line-height: 1;
+  word-break: normal;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  padding: 0;
+}
+
+.btn-t-submit {
+  width: 25vw;
+  background: $white;
+  border: 10px solid $orange-primary;
+
+  svg {
+    fill: $red-primary;
+  }
+
+  &:hover {
+    background: $red-primary;
+
+    svg {
+      fill: $white;
+    }
+  }
+
+  &:active {
+    border: none;
+    background: $red-primary;
+
+    svg {
+      fill: $white;
+    }
+  }
+
+  @include breakpoint(426px) {
+    width: 15vw;
+  }
+}
+
+.btn-t-remove {
+  svg {
+    height: 30px;
+    width: 30px;
+  }
+
+  &:hover {
+    svg {
+      fill: #FF0000;
+    }
+  }
+}
+
+.btn-t-option {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 85px;
+  padding-top: 14px;
+
+  .option-text {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+
+  svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  &:hover {
+    color: $red-primary;
+
+    svg {
+      fill: $red-primary;
+    }
+  }
+}

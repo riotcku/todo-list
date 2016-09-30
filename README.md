@@ -29,7 +29,7 @@ This will install a bunch of server utilities for node.
 
 ***Running the application***
 
-Navigate to this director on terminal.
+Navigate to this directory on terminal.
 Then, type ```gulp``` which will compile all the scss to css.
 
 After, navigate to the ```/server``` directory then type ```node server.js```.

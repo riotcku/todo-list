@@ -1,0 +1,175 @@
+$text-input-height: 70px;
+$header-height: 125px;
+
+.header {
+  background: $blue-primary;
+  padding: 30px 25px;
+  height: 125px;
+
+  h1 {
+    font-family: $font-secondary;
+    font-size: 40px;
+    color: $white;
+    margin: 0;
+    white-space: nowrap;
+  }
+}
+
+.todo-input {
+  box-shadow: 0px 1px 3px 2px rgba(0,0,0,.2);
+}
+
+.todo-input-form {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+}
+
+.todo-text-input {
+  display: inline-block;
+  width: 75vw;
+  height: 70px;
+  resize: none;
+  font-size: 13px;
+  border: none;
+  outline: none;
+  padding: 25px;
+  z-index: 2;
+
+  @include breakpoint(426px) {
+    width: 85vw;
+    font-size: 16px;
+    padding: 25px;
+  }
+}
+
+.todo-list-container {
+  position: fixed;
+  top: calc(#{$text-input-height} + #{$header-height});
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  overflow: auto;
+}
+
+.title-item-pair {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-right: 25px;
+
+  .title {
+    align-self: flex-start;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+
+}
+
+.todo-desc {
+  display: inline-block;
+  padding: 4px 0;
+  font-family: $font-secondary;
+}
+
+.todo-item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 14px 25px;
+}
+
+.todo-item.done {
+  .todo-desc {
+    text-decoration: line-through;
+    opacity: .25;
+  }
+}
+
+.todo-checkbox {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  vertical-align: middle;
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .checked {
+    svg {
+      fill: $green-primary;
+    }
+  }
+
+  &:hover {
+    .unchecked {
+      svg {
+        fill: $green-primary;
+      }
+    }
+  }
+}
+
+.input-order {
+  height: 25px;
+  width: 40px;
+  margin-top: 2px;
+  border: 3px solid #444;
+  border-radius: 4px;
+  padding: 0;
+  padding-left: 8px;
+  outline: none;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + .todo-checkbox {
+  .checked {
+    display: none;
+  }
+
+  .unchecked {
+    display: inline;
+  }
+}
+
+input[type="checkbox"]:checked + .todo-checkbox {
+  .checked {
+    display: inline;
+  }
+
+  .unchecked {
+    display: none;
+  }
+}
+
+.todo-menu {
+  position: fixed;
+  top: calc(100% - 80px);
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-wrap: row nowrap;
+  justify-content: space-between;
+  background-color: $teal-primary;
+
+  @include breakpoint(426px) {
+    justify-content: flex-start;
+  }
+}
