@@ -1,7 +1,26 @@
-@import "todo";
+@import "variables";
+@import "mixins";
+@import "app";
+@import "buttons";
+@import "icons";
 
 *,
 *::after,
 *::before {
   box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  color: $black-secondary;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:active,
+a:hover {
+  outline-width: 0;
 }
