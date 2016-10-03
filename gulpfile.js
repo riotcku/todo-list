@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
 var rename = require('gulp-rename');
+var autoprefixer = require('gulp-autoprefixer');
 
 // Lint Task
 gulp.task('lint', function() {
@@ -17,8 +18,22 @@ gulp.task('lint', function() {
 gulp.task('sass', function() {
     return gulp.src('assets/styles/*.scss')
         .pipe(sass())
+        .pipe(autoprefixer({
+          browsers:['> 1%', 'last 2 versions'],
+          cascade: false
+        }))
         .pipe(gulp.dest('src/'));
 });
+
+gulp.task('build', function() {
+    return gulp.src('assets/styles/*.scss')
+        .pipe(sass())
+        .pipe(autoprefixer({
+          browsers:['> 1%', 'last 2 versions'],
+          cascade: false
+        }))
+        .pipe(gulp.dest('../build-todo/Todo List/src/'))
+})
 
 // Watch Files For Changes
 gulp.task('watch', function() {
@@ -26,4 +41,4 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', 'build']);

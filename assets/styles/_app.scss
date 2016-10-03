@@ -1,14 +1,14 @@
 $text-input-height: 70px;
-$header-height: 125px;
+$header-height: 70px;
 
 .header {
   background: $blue-primary;
-  padding: 30px 25px;
-  height: 125px;
+  padding: 9px 25px;
+  height: $header-height;
 
   h1 {
     font-family: $font-secondary;
-    font-size: 40px;
+    font-size: 32px;
     color: $white;
     margin: 0;
     white-space: nowrap;
@@ -28,7 +28,7 @@ $header-height: 125px;
 .todo-text-input {
   display: inline-block;
   width: 75vw;
-  height: 70px;
+  height: $text-input-height;
   resize: none;
   font-size: 13px;
   border: none;
@@ -60,6 +60,7 @@ $header-height: 125px;
   margin-right: 25px;
 
   .title {
+    opacity: .6;
     align-self: flex-start;
   }
 
@@ -126,10 +127,12 @@ $header-height: 125px;
   height: 25px;
   width: 40px;
   margin-top: 2px;
-  border: 3px solid #444;
-  border-radius: 4px;
+  font-size: 15px;
+  border: none;
+  border-bottom: 3px solid #444;
+  border-radius: 2px;
   padding: 0;
-  padding-left: 8px;
+  padding-left: 5px;
   outline: none;
 }
 
@@ -167,7 +170,7 @@ input[type="checkbox"]:checked + .todo-checkbox {
   display: flex;
   flex-wrap: row nowrap;
   justify-content: space-between;
-  background-color: $teal-primary;
+  background-color: $teal-secondary;
 
   @include breakpoint(426px) {
     justify-content: flex-start;

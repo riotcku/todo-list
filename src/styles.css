@@ -1,10 +1,10 @@
 .header {
   background: #2BACB5;
-  padding: 30px 25px;
-  height: 125px; }
+  padding: 9px 25px;
+  height: 70px; }
   .header h1 {
     font-family: "Baloo Bhai", cursive;
-    font-size: 40px;
+    font-size: 32px;
     color: #FFF;
     margin: 0;
     white-space: nowrap; }
@@ -13,8 +13,13 @@
   box-shadow: 0px 1px 3px 2px rgba(0, 0, 0, 0.2); }
 
 .todo-input-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
   align-items: stretch; }
 
 .todo-text-input {
@@ -35,7 +40,7 @@
 
 .todo-list-container {
   position: fixed;
-  top: calc(70px + 125px);
+  top: calc(70px + 70px);
   bottom: 80px;
   left: 0;
   right: 0;
@@ -43,11 +48,18 @@
   overflow: auto; }
 
 .title-item-pair {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-right: 25px; }
   .title-item-pair .title {
+    opacity: .6;
+    -ms-flex-item-align: start;
     align-self: flex-start; }
   .title-item-pair:last-child {
     margin-right: 0; }
@@ -62,9 +74,16 @@
   font-family: "Baloo Bhai", cursive; }
 
 .todo-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
   align-items: stretch;
   padding: 14px 25px; }
 
@@ -90,10 +109,12 @@
   height: 25px;
   width: 40px;
   margin-top: 2px;
-  border: 3px solid #444;
-  border-radius: 4px;
+  font-size: 15px;
+  border: none;
+  border-bottom: 3px solid #444;
+  border-radius: 2px;
   padding: 0;
-  padding-left: 8px;
+  padding-left: 5px;
   outline: none; }
 
 input[type="checkbox"] {
@@ -117,12 +138,19 @@ input[type="checkbox"]:checked + .todo-checkbox .unchecked {
   bottom: 0;
   left: 0;
   right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: row nowrap;
   flex-wrap: row nowrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  background-color: #B4CCB9; }
+  background-color: #E9F1DF; }
   @media only screen and (min-width: 426px) {
     .todo-menu {
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
       justify-content: flex-start; } }
 
 .btn {
@@ -138,6 +166,7 @@ input[type="checkbox"]:checked + .todo-checkbox .unchecked {
 
 .btn-t-submit {
   width: 25vw;
+  height: 70px;
   background: #FFF;
   border: 10px solid #F5A503; }
   .btn-t-submit svg {
@@ -163,8 +192,13 @@ input[type="checkbox"]:checked + .todo-checkbox .unchecked {
   fill: #FF0000; }
 
 .btn-t-option {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 85px;
   padding-top: 14px; }
